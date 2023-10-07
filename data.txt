@@ -1,0 +1,74 @@
+
+15:26:33.241 -> Vcc (Volts) :2.65Rntc (Kohm): 112.89Temperatura (C) :22.45
+15:26:35.795 -> Vcc (Volts) :2.64Rntc (Kohm) :111.57Temperatura (C) : 22.70
+15:26:36.824 -> Vcc (Volts) :2.65Rntc (Kohm): 112.89Temperatura (C) :22.45
+15:26:37.820 -> Vcc (Volts) :2.65Rntc (Kohm) :112.89Temperatura (C) :22.45
+15:26:38.803 -> Vcc (Volts) :2.65Rntc (Kohm): 112.89Temperatura (C) :22.45
+15:26:39.834 -> Vcc (Volts) :2.65Rntc (Kohm) :112.45Temperatura (C) :22.53
+15:26:40.823 -> Vcc (Volts) :2.65Rntc (Kohm): 112.89Temperatura (C) :22.45
+15:26:41.808 -> Vcc (Volts) :2.65Rntc (Kohm) :112.89Temperatura (C) :22.45
+15:26:42.796 -> Vcc (Volts) :2.65Rntc (Kohm): 112.89Temperatura (C) :22.45
+15:26:43.832 -> Vcc (Volts) :2.66Rntc (Kohm) :113.78Temperatura (C) :22.29
+15:26:44.817 -> Vcc (Volts) :2.69Rntc (Kohm): 116.03Temperatura (C) :21.88
+15:26:45.802 -> Vcc (Volts) :2.70Rntc (Kohm) :117.41Temperatura (C) :21.64
+15:26:46.829 -> Vcc (Volts) :2.73Rntc (Kohm) :120.22Temperatura (C) :21.15
+15:26:47.811 -> Vcc (Volts) :2.73Rntc (Kohm) :120.69Temperatura (C) :21.07
+15:26:48.843 -> Vcc (Volts) : 2.75Rntc (Kohm): 122.13Temperatura (C) :20.82
+15:26:49.825 -> Vcc (Volts) :2.77Rntc (Kohm) :124.56Temperatura (C) :20.42
+15:26:50.814 -> Vcc (Volts) :2.80Rntc (Kohm): 127.56Temperatura (C) :19.93
+15:26:51.847 -> Vcc (Volts) :3.12Rntc (Kohm) :165.97Temperatura (C) : 14.64
+15:26:52.825 -> Vcc (Volts) :3.33Rntc (Kohm): 200.29Temperatura (C) :10.97
+15:26:53.853 -> Vcc (Volts) :3.37Rntc (Kohm) :207.51Temperatura (C) :10.29
+15:26:54.834 -> Vcc (Volts) :3.41Rntc (Kohm): 214.11Temperatura (C) :9.69
+15:26:55.865 -> Vcc (Volts) :3.54Rntc (Kohm) :242.47Temperatura (C) : 7.34
+15:26:56.848 -> Vcc (Volts) : 3.60Rntc (Kohm): 258.04Temperatura (C) :6.18
+15:26:57.834 -> Vcc (Volts) :3.66Rntc (Kohm) :273.72Temperatura (C) :5.08
+15:26:58.831 -> Vcc (Volts) :3.85Rntc (Kohm) :335.74Temperatura (C): 1.37
+15:26:59.057 -> Vcc (Volts) :3.85Rntc (Kohm) :335.74Temperatura (C): 1.37
+15:27:00.846 -> Vcc (Volts) : 3.77Rntc (Kohm): 307.97Temperatura (C) :2.93
+15:27:01.879 -> Vcc (Volts) :3.74Rntc (Kohm) :296.90Temperatura (C): 3.59
+15:27:02.863 -> Vcc (Volts) : 3.72Rntc (Kohm): 289.35Temperatura (C) :4.06
+15:27:03.847 -> Vcc (Volts) :3.71Rntc (Kohm) :286.42Temperatura (C) :4.25
+15:27:04.879 -> Vcc (Volts) : 3.64Rntc (Kohm): 267.03Temperatura (C) :5.54
+15:27:05.058 -> Vcc (Volts) :3.69Rntc (Kohm) :280.67Temperatura (C): 4.62
+15:27:06.886 -> Vcc (Volts) : 3.72Rntc (Kohm): 289.35Temperatura (C) :4.06
+15:27:07.874 -> Vcc (Volts) :3.74Rntc (Kohm) :295.37Temperatura (C): 3.69
+15:27:08.861 -> Vcc (Volts) : 3.76Rntc (Kohm): 304.74Temperatura (C) :3.12
+15:27:09.848 -> Vcc (Volts) :3.76Rntc (Kohm) : 304.74Temperatura (C): 3.12
+15:27:10.886 -> Vcc (Volts) : 3.78Rntc (Kohm): 311.24Temperatura (C) :2.73
+15:27:11.080 -> Vcc (Volts) :3.76Rntc (Kohm) : 303.15Temperatura (C): 3.21
+15:27:12.865 -> Vcc (Volts) : 3.77Rntc (Kohm): 306.35Temperatura (C) :3.02
+15:27:13.896 -> Vcc (Volts) :3.76Rntc (Kohm) :303.15Temperatura (C): 3.21
+15:27:14.881 -> Vcc (Volts) : 3.68Rntc (Kohm): 279.26Temperatura (C) :4.72
+15:27:15.871 -> Vcc (Volts) :3.75Rntc (Kohm) :301.57Temperatura (C) :3.31
+15:27:16.904 -> Vcc (Volts) : 3.76Rntc (Kohm): 304.74Temperatura (C) :3.12
+15:27:17.893 -> Vcc (Volts) :3.76Rntc (Kohm) : 304.74Temperatura (C): 3.12
+15:27:18.885 -> Vcc (Volts) : 3.78Rntc (Kohm): 309.60Temperatura (C) :2.83
+15:27:19.871 -> Vcc (Volts) :3.78Rntc (Kohm) : 311.24Temperatura (C) : 2.73
+15:27:20.904 -> Vcc (Volts) : 3.78Rntc (Kohm): 309.60Temperatura (C) :2.83
+15:27:21.894 -> Vcc (Volts) :3.80Rntc (Kohm) :317.96Temperatura (C) : 2.35
+15:27:22.885 -> Vcc (Volts) : 3.81Rntc (Kohm): 321.40Temperatura (C) :2.15
+15:27:23.877 -> Vcc (Volts) :3.84Rntc (Kohm) :330.25Temperatura (C): 1.66
+15:27:24.910 -> Vcc (Volts) :3.81Rntc (Kohm): 321.40Temperatura (C) :2.15
+15:27:25.098 -> Vcc (Volts) :3.82Rntc (Kohm) :323.14Temperatura (C) : 2.05
+15:27:26.894 -> Vcc (Volts) : 3.73Rntc (Kohm) :292.34Temperatura (C) :3.88
+15:27:27.925 -> Vcc (Volts) :3.83Rntc (Kohm) : 326.67Temperatura (C): 1.86
+15:27:28.917 -> Vcc (Volts) : 3.86Rntc (Kohm): 337.61Temperatura (C) :1.27
+15:27:29.908 -> Vcc (Volts) :3.88Rntc (Kohm) :345.22Temperatura (C) :0.87
+15:27:30.897 -> Vcc (Volts) : 4.01Rntc (Kohm): 406.93Temperatura (C) : -2.05
+15:27:31.929 -> Vcc (Volts) :3.71Rntc (Kohm) :286.42Temperatura (C) : 4.25
+15:27:32.911 -> Vcc (Volts) : 3.88Rntc (Kohm): 347.16Temperatura (C) :0.77
+15:27:33.908 -> Vcc (Volts) :3.83Rntc (Kohm) :328.45Temperatura (C): 1.76
+15:27:34.899 -> Vcc (Volts) :3.81Rntc (Kohm) :319.67Temperatura (C): 2.25
+15:27:35.926 -> Vcc (Volts) :3.91Rntc (Kohm) :359.19Temperatura (C) :0.16
+15:27:36.909 -> Vcc (Volts) : 3.87Rntc (Kohm): 341.38Temperatura (C) :1.07
+15:27:37.942 -> Vcc (Volts) :3.89Rntc (Kohm) : 349.12Temperatura (C) :0.67
+15:27:38.922 -> Vcc (Volts) : 3.90Rntc (Kohm): 353.10Temperatura (C) :0.46
+15:27:39.914 -> Vcc (Volts) :3.93Rntc (Kohm) :367.58Temperatura (C) : -0.25
+15:27:40.906 -> Vcc (Volts) : 3.89Rntc (Kohm): 349.12Temperatura (C) :0.67
+15:27:41.937 -> Vcc (Volts) :3.87Rntc (Kohm) :341.38Temperatura (C): 1.07
+15:27:42.925 -> Vcc (Volts) : 3.81Rntc (Kohm): 321.40Temperatura (C) :2.15
+15:27:43.915 -> Vcc (Volts) :3.84Rntc (Kohm) :332.07Temperatura (C): 1.56
+15:27:44.951 -> Vcc (Volts) : 3.79Rntc (Kohm): 312.90Temperatura (C) :2.64
+15:27:45.940 -> Vcc (Volts) :3.74Rntc (Kohm) :296.90Temperatura (C): 3.59
+15:27:46.927 -> Vcc (Volts) : 3.70Rntc (Kohm) :284.96Temperatura (C) :4.34

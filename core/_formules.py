@@ -21,4 +21,6 @@ class ThermoFormules:
     
     def h(k, diametro, nusselt):
         return (k / diametro) * nusselt
+
+c = lambda _ : _
 # def 

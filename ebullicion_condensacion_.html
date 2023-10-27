@@ -7482,7 +7482,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Enunciado"><strong>Enunciado</strong><a class="anchor-link" href="#Enunciado">¶</a></h1><h3 id="Autor-Jos%C3%A9-Daniel-Sarmiento-Blanco-2192232">Autor José Daniel Sarmiento Blanco 2192232<a class="anchor-link" href="#Autor-Jos%C3%A9-Daniel-Sarmiento-Blanco-2192232">¶</a></h3><p>Design a heat exchanger to be used as a crude oil cooler. 120 kg/s of crude oil enters to the heat exchanger at 102°C and leaves at 65°C. The coolant to be used is city water entering the tube side at 21°C with a flow rate of 65 kg/s. Pressure drop for the crude oil is limited to 150 kPa.</p>
+<h1 id="Enunciado"><strong>Enunciado</strong><a class="anchor-link" href="#Enunciado">¶</a></h1><h2 id="Jos%C3%A9-Daniel-Sarmiento-Blanco-2192232">José Daniel Sarmiento Blanco 2192232<a class="anchor-link" href="#Jos%C3%A9-Daniel-Sarmiento-Blanco-2192232">¶</a></h2><p>Design a heat exchanger to be used as a crude oil cooler. 120 kg/s of crude oil enters to the heat exchanger at 102°C and leaves at 65°C. The coolant to be used is city water entering the tube side at 21°C with a flow rate of 65 kg/s. Pressure drop for the crude oil is limited to 150 kPa.</p>
 </div>
 </div>
 </div>
@@ -7494,7 +7494,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">caudal_de_crudo</span>             <span class="o">=</span> <span class="mi">120</span> <span class="c1"># kg/s</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">caudal_crudo</span>             <span class="o">=</span> <span class="mi">120</span> <span class="c1"># kg/s</span>
 <span class="n">temperatura_entrada_crudo</span>   <span class="o">=</span> <span class="mi">102</span> <span class="c1"># ºC</span>
 <span class="n">temperatura_salida_crudo</span>    <span class="o">=</span> <span class="mi">65</span>  <span class="c1"># ºC</span>
 
@@ -7530,7 +7530,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="./diagrama.jpeg"/></p>
+<p align="center">
+<img alt="No description has been provided for this image" height="600px" src="./diagrama.jpeg"/>
+</p>
 </div>
 </div>
 </div>
@@ -7541,7 +7543,63 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Suposicion">Suposicion<a class="anchor-link" href="#Suposicion">¶</a></h2><p><a href="https://blog.verti.es/hogar/presion-agua-casa/#:~:text=Lo%20habitual%20es%20que%20la,tengamos%20una%20presi%C3%B3n%20u%20otra.">presión agua</a></p>
+<h2 id="0.-Establecer-valores-pre-dise%C3%B1o">0. Establecer valores pre-diseño<a class="anchor-link" href="#0.-Establecer-valores-pre-dise%C3%B1o">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">k_material</span>                            <span class="o">=</span> <span class="mi">60</span>    <span class="c1"># W/ m * k</span>
+<span class="n">diametro_interior</span>                     <span class="o">=</span> <span class="mf">16e-3</span> <span class="c1"># m</span>
+<span class="n">diametro_exterior</span>                     <span class="o">=</span> <span class="mf">19e-3</span> <span class="c1"># m</span>
+
+<span class="n">longitud</span>                              <span class="o">=</span> <span class="mi">4</span> <span class="c1">#m               </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">water</span> <span class="o">=</span> <span class="n">Fluid</span><span class="p">(</span><span class="n">FluidsList</span><span class="o">.</span><span class="n">Water</span><span class="p">)</span>
+<span class="n">water</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>Water</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="0.1-Suposici%C3%B3n">0.1 Suposición<a class="anchor-link" href="#0.1-Suposici%C3%B3n">¶</a></h3><p><a href="https://blog.verti.es/hogar/presion-agua-casa/#:~:text=Lo%20habitual%20es%20que%20la,tengamos%20una%20presi%C3%B3n%20u%20otra.">presión agua</a></p>
 <ul>
 <li>Considere como material el acero al carbono, k = 60 W/m*k.</li>
 <li>Diámetro de tubo de 3/4 in ( 19 mm exterior y 16 mm interior ).</li>
@@ -7558,11 +7616,49 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">k_material</span>                            <span class="o">=</span> <span class="mi">60</span>    <span class="c1"># W/ m*k</span>
-<span class="n">diametro_interior</span>                     <span class="o">=</span> <span class="mf">16e-3</span> <span class="c1"># m</span>
-<span class="n">diametro_exterior</span>                     <span class="o">=</span> <span class="mf">19e-3</span> <span class="c1"># m</span>
-<span class="n">longitud</span>                              <span class="o">=</span> <span class="mi">4</span> <span class="c1">#m               </span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">presion_agua</span>  <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">101_325</span> <span class="c1"># Pa</span>
+<span class="n">presion_crudo</span> <span class="o">=</span> <span class="mi">413_000</span>       <span class="c1"># Pa</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Composici%C3%B3n-del-crudo">Composición del crudo<a class="anchor-link" href="#Composici%C3%B3n-del-crudo">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="n">FluidsList</span><span class="o">.</span><span class="n">nHexane</span><span class="p">,</span> <span class="n">FluidsList</span><span class="o">.</span><span class="n">nOctane</span><span class="p">,</span> <span class="n">FluidsList</span><span class="o">.</span><span class="n">nDecane</span><span class="p">]</span>
+<span class="n">fractions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">mixture</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">components</span><span class="p">,</span> <span class="n">fractions</span><span class="p">))</span>
+<span class="n">mixture</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>{nHexane: 30, nOctane: 40, nDecane: 30}</pre>
 </div>
 </div>
 </div>
@@ -7575,8 +7671,10 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">presion_agua</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">101_325</span> <span class="c1"># Pa</span>
-<span class="n">presion_crudo</span> <span class="o">=</span> <span class="mi">4136_000</span> <span class="c1"># Pa</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">crudo</span> <span class="o">=</span> <span class="n">Mixture</span><span class="p">(</span>
+    <span class="n">components</span><span class="p">,</span>
+    <span class="n">fractions</span><span class="o">=</span><span class="n">fractions</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7619,6 +7717,17 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="1.-Termodin%C3%A1mica">1. Termodinámica<a class="anchor-link" href="#1.-Termodin%C3%A1mica">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>$$ \dot{Q} = (\dot{m} *C_{p})_{crudo} * (T_{c1} -T_{c2})$$</p>
 </div>
 </div>
@@ -7631,7 +7740,37 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">calor</span> <span class="o">=</span> <span class="n">caudal_de_crudo</span> <span class="o">*</span> <span class="n">cp_propiedades_crudo</span> <span class="o">*</span> <span class="p">(</span><span class="n">temperatura_entrada_crudo</span> <span class="o">-</span> <span class="n">temperatura_salida_crudo</span> <span class="p">)</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">temperatura_propiedades_crudo</span> <span class="o">=</span> <span class="p">(</span><span class="n">temperatura_entrada_crudo</span> <span class="o">+</span> <span class="n">temperatura_salida_crudo</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temperatura_propiedades_crudo</span><span class="p">)</span> <span class="c1">#+ 273.15)</span>
+
+<span class="n">cp_propiedades_crudo</span> <span class="o">=</span>  <span class="mf">0.83</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># J/kg k</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>83.5
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">calor</span> <span class="o">=</span> <span class="n">caudal_crudo</span> <span class="o">*</span> <span class="n">cp_propiedades_crudo</span> <span class="o">*</span> <span class="p">(</span><span class="n">temperatura_entrada_crudo</span> <span class="o">-</span> <span class="n">temperatura_salida_crudo</span> <span class="p">)</span> 
 <span class="n">calor</span>
 </pre></div>
 </div>
@@ -7658,49 +7797,11 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">water</span> <span class="o">=</span> <span class="n">Fluid</span><span class="p">(</span><span class="n">FluidsList</span><span class="o">.</span><span class="n">Water</span><span class="p">)</span>
-<span class="n">water</span><span class="o">.</span><span class="n">name</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>Water</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Suponga-una-temperatura-de-propiedades-de-agua-de">Suponga una temperatura de propiedades de agua de<a class="anchor-link" href="#Suponga-una-temperatura-de-propiedades-de-agua-de">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">state_agua</span> <span class="o">=</span> <span class="n">water</span><span class="o">.</span><span class="n">with_state</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">estado_agua_propiedades</span> <span class="o">=</span> <span class="n">water</span><span class="o">.</span><span class="n">with_state</span><span class="p">(</span>
     <span class="n">Input</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="n">presion_agua</span><span class="p">),</span>
-    <span class="n">Input</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mi">27</span><span class="p">),</span>
+    <span class="n">Input</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mi">34</span><span class="p">),</span>
 <span class="p">)</span>
-<span class="n">state_agua</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()</span>
+<span class="n">estado_agua_propiedades</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7713,18 +7814,18 @@ a.anchor-link {
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'compressibility': 0.0014679646038685545,
- 'conductivity': 0.6097949184333273,
+<pre>{'compressibility': 0.0014376012709739205,
+ 'conductivity': 0.6203366408703609,
  'critical_pressure': 22064000.0,
  'critical_temperature': 373.946,
- 'density': 996.5612223522704,
- 'dynamic_viscosity': 0.0008508970492459952,
- 'enthalpy': 113375.23765002219,
- 'entropy': 395.1237635503346,
+ 'density': 994.417937160409,
+ 'dynamic_viscosity': 0.0007337301352239351,
+ 'enthalpy': 142631.9153801642,
+ 'entropy': 491.47808690964223,
  'fraction': 100,
  'freezing_temperature': None,
- 'internal_energy': 113171.88837776403,
- 'kinematic_viscosity': 8.538331917406425e-07,
+ 'internal_energy': 142428.1278251999,
+ 'kinematic_viscosity': 7.378488538924831e-07,
  'max_pressure': 1000000000.0,
  'max_temperature': 1726.85,
  'min_pressure': 611.6548008968684,
@@ -7732,14 +7833,14 @@ a.anchor-link {
  'molar_mass': 0.018015268,
  'name': Water,
  'phase': Liquid,
- 'prandtl': 5.8331192360367865,
+ 'prandtl': 4.942945501085879,
  'pressure': 202650,
  'quality': None,
- 'sound_speed': 1502.0731022326067,
- 'specific_heat': 4180.301802554013,
- 'specific_volume': 0.0010034506436439627,
+ 'sound_speed': 1518.0155752419128,
+ 'specific_heat': 4179.043576032273,
+ 'specific_volume': 0.0010056133971753675,
  'surface_tension': None,
- 'temperature': 27.0,
+ 'temperature': 34.0,
  'triple_pressure': 611.6548008968684,
  'triple_temperature': 0.010000000000047748,
  'units_system': SIWithCelsiusAndPercents}</pre>
@@ -7747,7 +7848,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7755,21 +7856,12 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cp_agua</span> <span class="o">=</span> <span class="n">state_agua</span><span class="o">.</span><span class="n">specific_heat</span>
-<span class="n">cp_agua</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cp_agua</span>                         <span class="o">=</span> <span class="n">estado_agua_propiedades</span><span class="o">.</span><span class="n">specific_heat</span> <span class="c1"># J /kg k</span>
+<span class="n">viscosidad_dinamica_agua</span>        <span class="o">=</span> <span class="n">estado_agua_propiedades</span><span class="o">.</span><span class="n">dynamic_viscosity</span> <span class="c1"># Pa * s</span>
+<span class="n">densidad_agua</span>                   <span class="o">=</span> <span class="n">estado_agua_propiedades</span><span class="o">.</span><span class="n">density</span> <span class="c1"># kg / m3</span>
+<span class="n">k_agua</span>                          <span class="o">=</span> <span class="n">estado_agua_propiedades</span><span class="o">.</span><span class="n">conductivity</span> <span class="c1"># W / m k</span>
+<span class="n">prandl_agua</span>                     <span class="o">=</span> <span class="n">estado_agua_propiedades</span><span class="o">.</span><span class="n">prandtl</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>4180.301802554013</pre>
 </div>
 </div>
 </div>
@@ -7794,7 +7886,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">temperatura_salida_agua</span> <span class="o">=</span> <span class="n">temperatura_entrada_agua</span> <span class="o">+</span> <span class="n">calor</span> <span class="o">/</span> <span class="p">(</span><span class="n">caudal_agua</span> <span class="o">*</span> <span class="n">cp_agua</span><span class="p">)</span>
-<span class="n">temperatura_salida_agua</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"la temperatura de lsa salida del agua del agua es: "</span><span class="p">,</span> <span class="n">temperatura_salida_agua</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7804,10 +7896,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>34.56250990795588</pre>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>la temperatura de lsa salida del agua del agua es:  34.566593308704654
+</pre>
 </div>
 </div>
 </div>
@@ -7819,7 +7912,31 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><img alt="" src="./resistencia.jpeg"/></p>
+<h2 id="2.-Transferencia-de-calor">2. Transferencia de calor<a class="anchor-link" href="#2.-Transferencia-de-calor">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p align="center">
+<img alt="No description has been provided for this image" height="200px" src="./resistencia.jpeg"/>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="2.1-Calculo-de-una-U-estimada">2.1 Calculo de una U estimada<a class="anchor-link" href="#2.1-Calculo-de-una-U-estimada">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7831,8 +7948,19 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Asuma los coeficiente de trasferencia de calor</p>
-<p>$$ \frac{1}{U_{ensuciamiento}} = \frac{1}{h_{0}} + \frac{r_{0}}{r_{i}} \frac{1}{h_{i}} + R_{f_{}agua} + R_{f_{}crudo} + r_{0} \frac{ln(\frac{r_{0}}{r_{i}} )}{k} $$</p>
-<p>$$ \frac{1}{U_{limpio}} = \frac{1}{h_{0}} + \frac{r_{0}}{r_{i}} \frac{1}{h_{i}} + r_{0} \frac{ln(\frac{r_{0}}{r_{i}} )}{k} $$</p>
+<p>$$ \frac{1}{U_{ensuciamiento}} = \frac{r_{0}}{r_{i}} \frac{1}{h_{i}} + \frac{r_{0}}{r_{1}}*R_{f_{}i} + r_{0} \frac{ln(\frac{r_{0}}{r_{i}} )}{k} + R_{f_{}o} + \frac{1}{h_{0}} $$</p>
+<p>$$ \frac{1}{U_{limpio}} = \frac{r_{0}}{r_{i}} \frac{1}{h_{i}} + r_{0} \frac{ln(\frac{r_{0}}{r_{i}} )}{k} + \frac{1}{h_{0}}$$</p>
+<p>En este caso</p>
+<ul>
+<li><p>$ r_{0} $ -&gt; radio exterior</p>
+</li>
+<li><p>$ r_{i} $ -&gt; radio interior</p>
+</li>
+<li><p>$ h_{0} $ -&gt; coeficiente de convección en la carcasa</p>
+</li>
+<li><p>$ h_{i} $ -&gt; coeficiente de convección en el tubo</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7844,8 +7972,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">h_agua</span>    <span class="o">=</span> <span class="mi">5000</span> <span class="c1"># kj/kg * k</span>
-<span class="n">h_crudo</span>   <span class="o">=</span> <span class="mi">800</span> <span class="c1"># kj/kg * k</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">h_agua</span>    <span class="o">=</span> <span class="mi">4500</span>     <span class="c1"># kj/kg * k</span>
+<span class="n">h_crudo</span>   <span class="o">=</span> <span class="mi">800</span>      <span class="c1"># kj/kg * k</span>
 
 <span class="n">R_f_crudo</span> <span class="o">=</span> <span class="mf">0.000352</span> <span class="c1"># m2 k/w</span>
 <span class="n">R_f_agua</span>  <span class="o">=</span> <span class="mf">0.000176</span> <span class="c1"># m2 k/w</span>
@@ -7863,12 +7991,12 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">U_ensuciamiento</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="mi">1</span><span class="o">/</span><span class="n">h_crudo</span> <span class="o">+</span> 
-    <span class="n">R_f_crudo</span> <span class="o">+</span> 
-    <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">diametro_exterior</span><span class="o">/</span><span class="n">diametro_interior</span><span class="p">)</span> <span class="o">/</span> <span class="n">k_material</span> <span class="o">+</span>
-    <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">h_agua</span><span class="p">)</span> <span class="o">+</span>
-    <span class="n">R_f_agua</span> 
-<span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">h_crudo</span>
+    <span class="o">+</span> <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span><span class="p">)</span> <span class="o">*</span> <span class="n">R_f_crudo</span>
+    <span class="o">+</span> <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">diametro_exterior</span><span class="o">/</span><span class="n">diametro_interior</span><span class="p">)</span> <span class="o">/</span> <span class="n">k_material</span>
+    <span class="o">+</span> <span class="n">R_f_agua</span>
+    <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">h_agua</span>
+<span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span> 
 <span class="n">U_ensuciamiento</span>
 </pre></div>
 </div>
@@ -7882,7 +8010,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>489.5458406052166</pre>
+<pre>429.5889075234658</pre>
 </div>
 </div>
 </div>
@@ -7896,9 +8024,9 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">U_no_ensuciamiento</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="mi">1</span><span class="o">/</span><span class="n">h_crudo</span> <span class="o">+</span> 
-    <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">diametro_exterior</span><span class="o">/</span><span class="n">diametro_interior</span><span class="p">)</span> <span class="o">/</span> <span class="n">k_material</span> <span class="o">+</span>
-    <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">h_agua</span><span class="p">)</span> 
+    <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">h_crudo</span>
+    <span class="o">+</span> <span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span><span class="p">)</span> <span class="o">/</span> <span class="n">k_material</span>
+    <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">h_agua</span>
 <span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">U_no_ensuciamiento</span>
 </pre></div>
@@ -7913,8 +8041,19 @@ a.anchor-link {
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>660.192543934851</pre>
+<pre>576.7655158192335</pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="2.2-Calculo-de-la-diferencia-media-logar%C3%ADtmica">2.2 Calculo de la diferencia media logarítmica<a class="anchor-link" href="#2.2-Calculo-de-la-diferencia-media-logar%C3%ADtmica">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7928,10 +8067,11 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">diferencia_temperatura_1</span> <span class="o">=</span> <span class="n">temperatura_entrada_crudo</span> <span class="o">-</span> <span class="n">temperatura_salida_agua</span>
 <span class="n">diferencia_temperatura_2</span> <span class="o">=</span> <span class="n">temperatura_salida_crudo</span> <span class="o">-</span> <span class="n">temperatura_entrada_agua</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">diferencia_temperatura_1</span><span class="p">,</span> <span class="n">diferencia_temperatura_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"diferencia de temperatura sección 1: </span><span class="si">{</span><span class="n">diferencia_temperatura_1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> ºC"</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"diferencia de temperatura sección 2: </span><span class="si">{</span><span class="n">diferencia_temperatura_2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> ºC"</span> <span class="p">)</span>
 
 <span class="n">diferencia_log_temperatura</span> <span class="o">=</span> <span class="p">(</span><span class="n">diferencia_temperatura_2</span> <span class="o">-</span> <span class="n">diferencia_temperatura_1</span><span class="p">)</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">diferencia_temperatura_2</span><span class="o">/</span><span class="n">diferencia_temperatura_1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">diferencia_log_temperatura</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"diferencia media logarítmica: </span><span class="si">{</span><span class="n">diferencia_log_temperatura</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> ºC"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7944,8 +8084,9 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>67.43749009204413 44
-54.887262211690185
+<pre>diferencia de temperatura sección 1: 67.43 ºC
+diferencia de temperatura sección 2: 44.00 ºC
+diferencia media logarítmica: 54.89 ºC
 </pre>
 </div>
 </div>
@@ -7971,7 +8112,8 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="p">(</span><span class="n">temperatura_entrada_crudo</span> <span class="o">-</span> <span class="n">temperatura_salida_crudo</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">temperatura_salida_agua</span><span class="o">-</span> <span class="n">temperatura_entrada_agua</span><span class="p">)</span>
-<span class="n">R</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">R</span>
+<span class="nb">print</span><span class="p">({</span><span class="s2">"R"</span><span class="p">:</span><span class="n">R</span><span class="p">,</span> <span class="s2">"P"</span><span class="p">:</span><span class="n">P</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -7981,38 +8123,23 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>2.728108606084446</pre>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>{'R': 2.727287474318251, 'P': 0.36666468401904473}
+</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">R</span>
-<span class="n">P</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0.3665543218366454</pre>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Teniendo en cuenta las gráficas de moodle</p>
 </div>
 </div>
 </div>
@@ -8044,6 +8171,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Calculo-de-la-relaci%C3%B3n-de-area">Calculo de la relación de area<a class="anchor-link" href="#Calculo-de-la-relaci%C3%B3n-de-area">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8055,7 +8193,11 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">A_f</span> <span class="o">=</span> <span class="n">calor</span> <span class="o">/</span> <span class="p">(</span><span class="n">U_ensuciamiento</span> <span class="o">*</span> <span class="n">diferencia_log_temperatura_corregida</span><span class="p">)</span>
 <span class="n">A_c</span> <span class="o">=</span> <span class="n">calor</span> <span class="o">/</span> <span class="p">(</span><span class="n">U_no_ensuciamiento</span> <span class="o">*</span> <span class="n">diferencia_log_temperatura_corregida</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">A_f</span><span class="p">,</span> <span class="n">A_c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Are con ensuciamiento </span><span class="si">{</span><span class="n">A_f</span><span class="si">}</span><span class="s2"> m^2"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Are sin ensuciamiento </span><span class="si">{</span><span class="n">A_c</span><span class="si">}</span><span class="s2"> m^2"</span><span class="p">)</span>
+
+<span class="n">area_ratio</span> <span class="o">=</span>  <span class="n">A_f</span> <span class="o">/</span> <span class="n">A_c</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Relación de area ratio: </span><span class="si">{</span><span class="n">area_ratio</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8068,35 +8210,10 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>152.38900010839606 112.99946029747196
+<pre>Are con ensuciamiento 181.7406452013175 m^2
+Are sin ensuciamiento 135.3648286578791 m^2
+Relación de area ratio: 0.3426
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">area_ratio</span> <span class="o">=</span>  <span class="n">A_f</span> <span class="o">/</span> <span class="n">A_c</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="n">area_ratio</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0.34858166319760153</pre>
 </div>
 </div>
 </div>
@@ -8108,7 +8225,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Se toma como referencia las siguientes dimisiones y parámetros de diseño</p>
+<p>Se toma como referencia las siguientes dimisiones y parámetros de diseño en base a los valores estándares</p>
 </div>
 </div>
 </div>
@@ -8138,9 +8255,10 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">diametro_carcasa</span> <span class="o">=</span> <span class="mf">0.637</span> <span class="o">*</span> <span class="p">(</span><span class="n">Cl</span> <span class="o">/</span> <span class="n">CTP</span> <span class="o">*</span> <span class="n">A_f</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">PitchRatio</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">diametro_exterior</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">diametro_carcasa</span><span class="p">)</span>
-<span class="n">diametro_carcasa</span> <span class="o">=</span> <span class="mf">0.7</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">diametro_carcasa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"El diámetro de la carcasa </span><span class="si">{</span><span class="n">diametro_carcasa</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> m"</span><span class="p">)</span>
+
+<span class="n">diametro_carcasa</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"El diámetro de la carcasa estándar </span><span class="si">{</span><span class="n">diametro_carcasa</span><span class="si">}</span><span class="s2"> m"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8153,8 +8271,8 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.7024761526855244
-0.7
+<pre>El diámetro de la carcasa 0.76715 m
+El diámetro de la carcasa estándar 0.8 m
 </pre>
 </div>
 </div>
@@ -8182,7 +8300,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>634.1930193905818
+<pre>828.3337396121887
 </pre>
 </div>
 </div>
@@ -8277,7 +8395,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>27.78125495397794
+<pre>27.783296654352327
 </pre>
 </div>
 </div>
@@ -8389,7 +8507,7 @@ espacio entre baffle 0.5
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">G_s</span> <span class="o">=</span> <span class="n">caudal_de_crudo</span> <span class="o">/</span> <span class="n">A_s</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">G_s</span> <span class="o">=</span> <span class="n">caudal_crudo</span> <span class="o">/</span> <span class="n">A_s</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">G_s</span><span class="p">)</span>
 </pre></div>
@@ -8406,35 +8524,6 @@ espacio entre baffle 0.5
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>2442.307692307692
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="n">FluidsList</span><span class="o">.</span><span class="n">nHexane</span><span class="p">,</span> <span class="n">FluidsList</span><span class="o">.</span><span class="n">nOctane</span><span class="p">,</span> <span class="n">FluidsList</span><span class="o">.</span><span class="n">nDecane</span><span class="p">]</span>
-<span class="n">fractions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
-<span class="n">mixture</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">components</span><span class="p">,</span> <span class="n">fractions</span><span class="p">))</span>
-<span class="n">mixture</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{nHexane: 30, nOctane: 40, nDecane: 30}</pre>
 </div>
 </div>
 </div>
@@ -8464,18 +8553,18 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'compressibility': 0.0014644738083190445,
- 'conductivity': 0.6110269720320316,
+<pre>{'compressibility': 0.0014644647194993476,
+ 'conductivity': 0.6110301728439101,
  'critical_pressure': 22064000.0,
  'critical_temperature': 373.946,
- 'density': 996.3433167890219,
- 'dynamic_viscosity': 0.000836367771464936,
- 'enthalpy': 116641.02661706795,
- 'entropy': 405.9901508078167,
+ 'density': 996.3427400551607,
+ 'dynamic_viscosity': 0.0008363303275519409,
+ 'enthalpy': 116649.56106539103,
+ 'entropy': 406.01851083797783,
  'fraction': 100,
  'freezing_temperature': None,
- 'internal_energy': 116437.6328705613,
- 'kinematic_viscosity': 8.394373278483474e-07,
+ 'internal_energy': 116446.16720124884,
+ 'kinematic_viscosity': 8.394002323995847e-07,
  'max_pressure': 1000000000.0,
  'max_temperature': 1726.85,
  'min_pressure': 611.6548008968684,
@@ -8483,14 +8572,14 @@ espacio entre baffle 0.5
  'molar_mass': 0.018015268,
  'name': Water,
  'phase': Liquid,
- 'prandtl': 5.721638142997106,
+ 'prandtl': 5.721351230984074,
  'pressure': 202650,
  'quality': None,
- 'sound_speed': 1504.02450259156,
- 'specific_heat': 4180.0692815493885,
- 'specific_volume': 0.001003670103617258,
+ 'sound_speed': 1504.0295438369426,
+ 'specific_heat': 4180.068707781974,
+ 'specific_volume': 0.0010036706845925698,
  'surface_tension': None,
- 'temperature': 27.781254953977964,
+ 'temperature': 27.78329665435234,
  'triple_pressure': 611.6548008968684,
  'triple_temperature': 0.010000000000047748,
  'units_system': SIWithCelsiusAndPercents}</pre>
@@ -8525,7 +8614,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>996.3433167890219 4180.0692815493885 0.000836367771464936 0.6110269720320316 5.721638142997106
+<pre>996.3427400551607 4180.068707781974 0.0008363303275519409 0.6110301728439101 5.721351230984074
 </pre>
 </div>
 </div>
@@ -8560,18 +8649,18 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'compressibility': 0.006436783703957838,
- 'conductivity': 0.14217900216844762,
+<pre>{'compressibility': 0.006436755777148306,
+ 'conductivity': 0.14217831788022434,
  'critical_pressure': 2981833.4687300003,
  'critical_temperature': 298.33744539093857,
- 'density': 689.7875540581897,
+ 'density': 689.7858668774503,
  'dynamic_viscosity': None,
- 'enthalpy': -232835.11238757614,
- 'entropy': -574.4950106366606,
+ 'enthalpy': -232830.54755720525,
+ 'entropy': -574.4798416742174,
  'fluids': [nHexane, nOctane, nDecane],
  'fractions': [30, 40, 30],
  'freezing_temperature': None,
- 'internal_energy': -232981.53428204704,
+ 'internal_energy': -232976.9698098167,
  'kinematic_viscosity': None,
  'max_pressure': 605929364.2590215,
  'max_temperature': 394.3155003716736,
@@ -8582,11 +8671,11 @@ espacio entre baffle 0.5
  'prandtl': None,
  'pressure': 101000,
  'quality': None,
- 'sound_speed': 1141.6373570898857,
- 'specific_heat': 2235.7944562489474,
- 'specific_volume': 0.0014497217210092503,
+ 'sound_speed': 1141.6288890694889,
+ 'specific_heat': 2235.802285290991,
+ 'specific_volume': 0.0014497252669539884,
  'surface_tension': None,
- 'temperature': 27.781254953977964,
+ 'temperature': 27.78329665435234,
  'triple_pressure': 1.5799947781094636,
  'triple_temperature': -65.24557909004545,
  'units_system': SIWithCelsiusAndPercents}</pre>
@@ -8621,7 +8710,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>689.7875540581897 2235.7944562489474 0.001 0.14217900216844762 None
+<pre>689.7858668774503 2235.802285290991 0.001 0.14217831788022434 None
 </pre>
 </div>
 </div>
@@ -8681,7 +8770,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>55.64062747698897</pre>
+<pre>55.64164832717616</pre>
 </div>
 </div>
 </div>
@@ -8711,18 +8800,18 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'compressibility': 0.0013552347549151689,
- 'conductivity': 0.6467347002722287,
+<pre>{'compressibility': 0.0013552312320620485,
+ 'conductivity': 0.6467357483177187,
  'critical_pressure': 22064000.0,
  'critical_temperature': 373.946,
- 'density': 985.4258657289612,
- 'dynamic_viscosity': 0.0004985548423578504,
- 'enthalpy': 233094.944617429,
- 'entropy': 776.0879261429805,
+ 'density': 985.4253674034841,
+ 'dynamic_viscosity': 0.0004985467955942873,
+ 'enthalpy': 233099.21479641055,
+ 'entropy': 776.1009136555505,
  'fraction': 100,
  'freezing_temperature': None,
- 'internal_energy': 232889.29748852298,
- 'kinematic_viscosity': 5.059283094716093e-07,
+ 'internal_energy': 232893.56756356746,
+ 'kinematic_viscosity': 5.059203995406752e-07,
  'max_pressure': 1000000000.0,
  'max_temperature': 1726.85,
  'min_pressure': 611.6548008968684,
@@ -8730,14 +8819,14 @@ espacio entre baffle 0.5
  'molar_mass': 0.018015268,
  'name': Water,
  'phase': Liquid,
- 'prandtl': 3.2245626960404867,
+ 'prandtl': 3.2245057186580506,
  'pressure': 202650,
  'quality': None,
- 'sound_speed': 1548.102492741577,
- 'specific_heat': 4182.963260109866,
- 'specific_volume': 0.0010147896810687607,
+ 'sound_speed': 1548.1033156097012,
+ 'specific_heat': 4182.963640203917,
+ 'specific_volume': 0.0010147901942436483,
  'surface_tension': None,
- 'temperature': 55.64062747698898,
+ 'temperature': 55.64164832717614,
  'triple_pressure': 611.6548008968684,
  'triple_temperature': 0.010000000000047748,
  'units_system': SIWithCelsiusAndPercents}</pre>
@@ -8745,7 +8834,7 @@ espacio entre baffle 0.5
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8754,7 +8843,20 @@ espacio entre baffle 0.5
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">viscodiad_dinamica_agua_kern</span> <span class="o">=</span> <span class="n">state_average</span><span class="o">.</span><span class="n">dynamic_viscosity</span>
+<span class="n">viscodiad_dinamica_agua_kern</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0.0004985467955942873</pre>
 </div>
 </div>
 </div>
@@ -8781,7 +8883,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>2458.236773857342</pre>
+<pre>2458.2373104527564</pre>
 </div>
 </div>
 </div>
@@ -8821,7 +8923,7 @@ espacio entre baffle 0.5
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">u_m</span> <span class="o">=</span> <span class="n">caudal_de_crudo</span> <span class="o">/</span> <span class="p">(</span><span class="n">densidad_crudo_kern</span> <span class="o">*</span> <span class="n">A_tp</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">u_m</span> <span class="o">=</span> <span class="n">caudal_agua</span> <span class="o">/</span> <span class="p">(</span><span class="n">densidad_agua_kern</span> <span class="o">*</span> <span class="n">A_tp</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">u_m</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8835,7 +8937,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2.7038716172614667
+<pre>1.0139692182428435
 </pre>
 </div>
 </div>
@@ -8863,7 +8965,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>51536.838357037144</pre>
+<pre>19327.499404554037</pre>
 </div>
 </div>
 </div>
@@ -8901,7 +9003,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0.00520331828147795</pre>
+<pre>0.0065953698516935284</pre>
 </div>
 </div>
 </div>
@@ -8928,7 +9030,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>310.2859407665621</pre>
+<pre>132.8089134819997</pre>
 </div>
 </div>
 </div>
@@ -8955,7 +9057,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>11849.56742816892
+<pre>5071.890835007386
 </pre>
 </div>
 </div>
@@ -8973,7 +9075,7 @@ espacio entre baffle 0.5
     <span class="n">diametro_exterior</span> <span class="o">/</span> <span class="p">(</span><span class="n">diametro_interior</span> <span class="o">*</span> <span class="n">h_i</span><span class="p">)</span> <span class="o">+</span> 
     <span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span> <span class="o">*</span> <span class="n">R_f_crudo</span> <span class="o">+</span> 
     <span class="n">diametro_exterior</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">k_material</span><span class="p">)</span> <span class="o">+</span> 
-    <span class="mi">1</span><span class="o">/</span><span class="n">h_i</span>
+    <span class="mi">1</span><span class="o">/</span><span class="n">h_0</span>
 <span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">U_f</span>
 </pre></div>
@@ -8988,7 +9090,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>1587.7665282453877</pre>
+<pre>920.6926723779326</pre>
 </div>
 </div>
 </div>
@@ -9004,7 +9106,7 @@ espacio entre baffle 0.5
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">U_c</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">diametro_exterior</span> <span class="o">/</span> <span class="p">(</span><span class="n">diametro_interior</span> <span class="o">*</span> <span class="n">h_i</span><span class="p">)</span> <span class="o">+</span> 
     <span class="n">diametro_exterior</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">diametro_exterior</span> <span class="o">/</span> <span class="n">diametro_interior</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">k_material</span><span class="p">)</span> <span class="o">+</span> 
-    <span class="mi">1</span> <span class="o">/</span> <span class="n">h_i</span>
+    <span class="mi">1</span> <span class="o">/</span> <span class="n">h_0</span>
 <span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">U_c</span>
 </pre></div>
@@ -9019,7 +9121,7 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>4721.089393417337</pre>
+<pre>1496.695081669341</pre>
 </div>
 </div>
 </div>
@@ -9055,16 +9157,43 @@ espacio entre baffle 0.5
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0.226386875128573
+<pre>0.2727597254007179
 7.0
-1.0253316879520018
+1.025338114643251
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>85090.43042004951</pre>
+<pre>102519.68178099226</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">calor</span> <span class="o">/</span><span class="p">(</span><span class="n">U_f</span> <span class="o">*</span> <span class="n">diferencia_log_temperatura</span><span class="p">)</span>
+<span class="n">area</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>58.851783401904335</pre>
 </div>
 </div>
 </div>
@@ -9107,7 +9236,7 @@ espacio entre baffle 0.5
 </li>
 <li><p>Coeficientes de convección</p>
 <ul>
-<li>Agua : 11849.56742816892 W/mk</li>
+<li>Agua : 5071.76 W/mk</li>
 <li>Crudo : 2458.236773857342</li>
 </ul>
 </li>
